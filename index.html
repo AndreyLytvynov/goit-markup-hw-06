@@ -403,18 +403,96 @@
             </li>
           </ul>
         </div>
+        <form class="form-footer">
+          <h3 class="title-link">Подпишись на рассылку</h3>
+          <label class="">
+            <input class="field-footer" type="mail" name="mail-footer" placeholder="E-mail" />
+            <button class="button-footer button" type="button">
+              <span class="text-button">Подписаться</span>
+            </button>
+          </label>
+        </form>
       </div>
     </footer>
+    <!-- Бекдроп и модальное окно -->
     <div class="backdrop is-hidden" data-modal>
-      <!-- is-hidden -->
       <div class="modal">
         <button data-modal-close class="button-close" type="button">
           <svg class="icon-close">
             <use href="./images/symbol-defs.svg#icon-close"></use>
           </svg>
         </button>
+        <form class="js-speaker-form" autocomplete="off">
+          <h3 class="group-title">Оставьте свои данные, мы вам перезвоним</h3>
+          <ul class="field-group">
+            <li class="field-item">
+              <label class="field">
+                <input class="field-input" type="text" name="name" placeholder=" " />
+                <span class="field-name">Name</span>
+                <svg class="icon">
+                  <use href="./images/symbol-defs.svg#icon-person-field"></use>
+                </svg>
+              </label>
+            </li>
+            <li class="field-item">
+              <label class="field">
+                <input class="field-input" type="tel" name="tel" placeholder=" " />
+                <span class="field-name">Telephone</span>
+                <svg class="icon">
+                  <use href="./images/symbol-defs.svg#icon-phone-field"></use>
+                </svg>
+              </label>
+            </li>
+            <li class="field-item">
+              <label class="field">
+                <input class="field-input" type="mail" name="mail" placeholder=" " />
+                <span>Mail</span>
+                <svg class="icon">
+                  <use href="./images/symbol-defs.svg#icon-mail-field"></use>
+                </svg>
+              </label>
+            </li>
+            <li class="field-item">
+              <label class="field textarea">
+                <span>Комментарий</span>
+                <textarea
+                  class="field-textarea"
+                  name="comment"
+                  cols="30"
+                  rows="10"
+                  placeholder="Введите текст"
+                ></textarea>
+              </label>
+            </li>
+          </ul>
+
+          <label class="agreement">
+            <input class="checkbox" type="checkbox" name="agreement" />
+            <span class="agreement-text"
+              >Соглашаюсь с рассылкой и принимаю
+              <a class="agreement-link" href="">Условия договора</a></span
+            >
+            <svg class="icon-box">
+              <use href="./images/symbol-defs.svg#icon-mark-field"></use>
+            </svg>
+            <!-- <span class="icon-box"></span> -->
+          </label>
+
+          <button class="application-button button" type="submit">Отправить</button>
+        </form>
       </div>
     </div>
     <script src="./js/modal.js"></script>
+    <script>
+      (() => {
+        document.querySelector('.js-speaker-form').addEventListener('submit', e => {
+          e.preventDefault();
+
+          new FormData(e.currentTarget).forEach((value, name) => console.log(`${name}: ${value}`));
+
+          e.currentTarget.reset();
+        });
+      })();
+    </script>
   </body>
 </html>

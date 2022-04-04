@@ -194,7 +194,57 @@ body {
   padding: 60px 0;
 }
 .links-footer {
-  padding-top: 12px;
+  margin-top: 12px;
+}
+.form-footer {
+  margin-top: 12px;
+  margin-left: 93px;
+}
+.field-footer {
+  height: 50px;
+  width: 358px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  background-color: inherit;
+  padding-left: 16px;
+  color: #ffffff;
+}
+
+.field-footer::placeholder {
+  font-size: 16px;
+  line-height: 1.25;
+  align-items: center;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.6);
+}
+.button-footer {
+  display: inline-block;
+  margin-left: 12px;
+  padding: 10px 28px;
+  background-color: var(--accent-color);
+  color: var(--white-text-color);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  align-items: center;
+  letter-spacing: 0.06em;
+}
+
+.text-button {
+  display: flex;
+  align-items: center;
+}
+.text-button::after {
+  display: block;
+  content: '';
+  width: 24px;
+  height: 24px;
+  background-image: url(../images/icon-send.svg);
+  background-position: center;
+  background-size: contain;
+  margin-left: 10px;
 }
 
 /* Блок герой */
@@ -568,11 +618,15 @@ body {
   top: 50%;
   left: 50%;
   display: block;
+  padding: 40px;
   width: 528px;
   height: 581px;
   background-color: #fff;
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
 }
 
 .button-close {
@@ -593,13 +647,174 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  fill: #000000;
+  fill: var(--black-text-colore);
   width: 11px;
   height: 11px;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.group-title {
+  margin-bottom: 30px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
 .button-close:hover .icon-close {
   fill: var(--accent-color);
   cursor: pointer;
+}
+
+textarea {
+  resize: none;
+}
+.field-group {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.field-item {
+  position: relative;
+}
+.field-item:not(:last-child) {
+  margin-bottom: 28px;
+}
+
+.field span {
+  position: absolute;
+  top: 50%;
+  left: 42px;
+  transform: translateY(-50%);
+
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+
+  color: var(--paragraph-text-color);
+}
+.field input {
+  padding-left: 40px;
+  height: 40px;
+  display: block;
+  width: 100%;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
+.field .icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  display: block;
+  width: 18px;
+  height: 18px;
+  left: 12px;
+}
+
+input:focus + span,
+.field-input:not(:placeholder-shown) + span {
+  transform: translateY(0);
+  top: -18px;
+  left: 0;
+}
+input:focus ~ .icon {
+  fill: var(--accent-color);
+}
+
+input:focus {
+  outline: 1px solid var(--accent-color);
+}
+
+.field.textarea span {
+  display: block;
+  top: -18px;
+  left: 0;
+  transform: translateY(0);
+}
+
+.field textarea {
+  height: 120px;
+  width: 100%;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding: 12px 16px;
+}
+.field-textarea:focus {
+  outline: 1px solid var(--accent-color);
+}
+.field textarea::placeholder {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.01em;
+
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.agreement-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: var(--paragraph-text-color);
+}
+
+.checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.agreement {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-left: 24px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.icon-box {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -24px;
+  display: inline-block;
+  content: '';
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  border: 2px solid black;
+}
+
+.checkbox:checked ~ .icon-box {
+  background-color: var(--accent-color);
+  border: 2px solid var(--accent-color);
+}
+.application-button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 10px 55px;
+  background-color: var(--accent-color);
+  color: var(--white-text-color);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  align-items: center;
+  letter-spacing: 0.06em;
+}
+
+.agreement-link {
+  color: var(--accent-color);
 }

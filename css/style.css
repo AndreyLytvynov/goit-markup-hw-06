@@ -109,6 +109,27 @@ body {
 .navigation .link:hover {
   color: var(--accent-color);
 }
+/* .main-nav__item--current::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 5px;
+  background-color: var(--accent-color);
+  border-radius: 4px;
+} */
+.navigation .item {
+  position: relative;
+}
+.link.current::after {
+  position: absolute;
+  bottom: 0;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 5px;
+  background-color: var(--accent-color);
+  border-radius: 4px;
+}
 
 .header-contacts.list {
   display: flex;

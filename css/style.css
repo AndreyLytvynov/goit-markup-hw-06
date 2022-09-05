@@ -268,6 +268,7 @@ body {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
   background-color: inherit;
+  color: var(--white-text-color);
 
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
@@ -645,7 +646,12 @@ body {
 }
 /* Кнопка закрытия модалки */
 .close-modal {
+  width: 30px;
+  height: 30px;
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   right: 8px;
   top: 8px;
@@ -654,6 +660,7 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: var(--white-text-color);
 }
 .close-modal:hover {
   fill: var(--accent-color);
@@ -697,7 +704,7 @@ body {
   position: absolute;
   min-width: 528px;
   min-height: 581px;
-  background-color: #ececec;
+  background-color: var(--white-text-color);
   top: 50%;
   left: 50%;
 
